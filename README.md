@@ -48,6 +48,7 @@ AI/
 ├── style.css                                       # สไตล์ชีต Modern CSS (Dark/Light mode, Layout)
 ├── app.js                                          # สคริปต์ควบคุมการทำงาน (Theme, Modal, Search)
 ├── File/                                           # โฟลเดอร์เก็บไฟล์ PDF ทั้งหมด
+│   ├── utcc-logo.png                               # โลโก้มหาวิทยาลัยหอการค้าไทย
 │   ├── 1. Assignment สร้างรูปด้วย AI.pdf         # เอกสาร Assignment 1
 │   ├── 2. Assignment สร้างกราฟคณิตศาสตร์.pdf     # เอกสาร Assignment 2
 │   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf
