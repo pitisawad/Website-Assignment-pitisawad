@@ -189,18 +189,30 @@ function initPDFModal() {
 
   // Toggle in-page viewer collapse/expand
   document.querySelectorAll('[data-action="toggle-viewer"]').forEach(btn => {
+    const targetId = btn.getAttribute('data-target');
+    const viewerSection = document.getElementById(targetId);
+
+    // Keep the page compact on first load; users can open each PDF when needed.
+    if (viewerSection) {
+      viewerSection.style.display = 'none';
+      updateViewerToggleButton(btn, true);
+    }
+
     btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const viewerSection = document.getElementById(targetId);
       if (viewerSection) {
         const isHidden = viewerSection.style.display === 'none';
         viewerSection.style.display = isHidden ? 'block' : 'none';
-        btn.innerHTML = isHidden 
-          ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg> ซ่อนหน้าต่าง PDF`
-          : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg> แสดงหน้าต่าง PDF`;
+        updateViewerToggleButton(btn, !isHidden);
       }
     });
   });
+}
+
+function updateViewerToggleButton(button, isHidden) {
+  button.setAttribute('aria-expanded', String(!isHidden));
+  button.innerHTML = isHidden
+    ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg> แสดงหน้าต่าง PDF`
+    : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg> ซ่อนหน้าต่าง PDF`;
 }
 
 /* -------------------------------------------------------------------------- */
