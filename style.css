@@ -260,6 +260,40 @@ body {
   margin-right: auto;
 }
 
+.author-card {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  padding: 1.35rem 1.5rem;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.author-title {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.author-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1.5rem;
+}
+
+.author-details p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.author-details strong {
+  color: var(--text-primary);
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -849,6 +883,9 @@ body {
   }
   .assignment-card {
     padding: 1.5rem;
+  }
+  .author-details {
+    grid-template-columns: 1fr;
   }
   .sticky-nav {
     flex-direction: column;
