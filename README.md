@@ -3,6 +3,14 @@
 
 เว็บไซต์สำหรับนำเสนอและแสดงผลงานการประยุกต์ใช้ AI ในหลากหลายมิติ แยกตามหัวข้อของไฟล์ PDF ที่อยู่ในโฟลเดอร์ `File` สามารถเปิดดูเอกสาร PDF แบบ Interactive ได้โดยตรงบนเว็บ พร้อมออกแบบโครงสร้าง Source Code ให้รองรับการอัปโหลดขึ้น **GitHub** ผ่าน **GitHub Desktop** และเปิดใช้งาน **GitHub Pages** เพื่อเข้าดูผ่านเว็บไซต์ได้ทันที
 
+## 👤 ข้อมูลผู้จัดทำ
+
+- **ชื่อผู้จัดทำ:** นาย ปิติสวัสดิ์ วรรณภูงา
+- **งานที่ส่ง:** Week 1
+- **รายวิชา:** ปัญญาประดิษฐ์เบื้องต้น
+- **รหัสวิชา:** GE931-1
+- **ผู้สอน:** อาจารย์ ดร.อภิมุข เมืองสุข
+
 ---
 
 ## 📂 รายการหัวข้อและไฟล์ Assignment ในโฟลเดอร์ `File/` (5 หัวข้อ)
@@ -33,19 +41,18 @@
 
 ```text
 AI/
-├── index.html                                                      # หน้าเว็บหลักของ Showcase Portfolio
-├── css/
-│   └── style.css                                                   # สไตล์ชีต Modern CSS (Dark/Light mode, Layout)
-├── js/
-│   └── app.js                                                      # สคริปต์ควบคุมการทำงาน (Theme, Modal, Search)
-├── File/                                                           # โฟลเดอร์เก็บไฟล์ PDF ทั้งหมด
-│   ├── 1. Assignment สร้างรูปด้วย AI.pdf                           # เอกสาร Assignment 1
-│   ├── 2. Assignment สร้างกราฟคณิตศาสตร์.pdf                       # เอกสาร Assignment 2
-│   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf             # เอกสาร Assignment 3
-│   ├── 4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf    # เอกสาร Assignment 4
-│   └── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf     # เอกสาร Assignment 5
-├── .gitignore                                                      # รายการไฟล์ที่ไม่ต้องนำเข้า Git
-└── README.md                                                       # เอกสารประกอบโปรเจกต์และคู่มือการใช้งาน
+├── index.html                                      # หน้าเว็บหลักของ Showcase Portfolio
+├── style.css                                       # สไตล์ชีต Modern CSS (Dark/Light mode, Layout)
+├── app.js                                          # สคริปต์ควบคุมการทำงาน (Theme, Modal, Search)
+├── File/                                           # โฟลเดอร์เก็บไฟล์ PDF ทั้งหมด
+│   ├── 1. Assignment สร้างรูปด้วย AI.pdf         # เอกสาร Assignment 1
+│   ├── 2. Assignment สร้างกราฟคณิตศาสตร์.pdf     # เอกสาร Assignment 2
+│   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf
+│   ├── 4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf
+│   └── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
+├── .github/
+│   └── workflows/static.yml                       # Workflow สำหรับ Deploy ผ่าน GitHub Pages
+└── README.md                                      # เอกสารประกอบโปรเจกต์และคู่มือการใช้งาน
 ```
 
 ---
@@ -57,8 +64,7 @@ AI/
 ### 1. นำโฟลเดอร์เข้าสู่ GitHub Desktop
 1. เปิดโปรแกรม **GitHub Desktop**
 2. ไปที่แถบเมนูด้านบน เลือก **File** > **Add Local Repository...** (หรือกดปุ่มลัด `Cmd + O`)
-3. กดปุ่ม **Choose...** แล้วเลือกโฟลเดอร์:
-   `/Users/maxx/Code_Project/AI`
+3. กดปุ่ม **Choose...** แล้วเลือกโฟลเดอร์โปรเจกต์ที่เก็บไฟล์ `index.html` ไว้
 4. คลิกปุ่ม **Add Repository**
 
 ### 2. Commit การเปลี่ยนแปลง
@@ -82,10 +88,8 @@ AI/
 1. ในโปรแกรม GitHub Desktop ให้ไปที่เมนู **Repository** (ด้านบน) > เลือก **View on GitHub** (หรือกด `Cmd + Shift + G`) เพื่อเปิดหน้าเว็บ GitHub ขึ้นมา
 2. ที่หน้าเว็บ GitHub ของ Repository นั้น คลิกที่แท็บ **Settings** (แถบเมนูด้านบนขวา)
 3. ที่เมนูด้านซ้าย ในหมวด *Code and automation* คลิกเลือก **Pages**
-4. ในส่วน **Build and deployment**:
-   - **Source**: เลือก `Deploy from a branch`
-   - **Branch**: เลือก `main` และโฟลเดอร์ `/ (root)`
-   - คลิกปุ่ม **Save**
+4. ในส่วน **Build and deployment** ให้เลือก **Source: GitHub Actions**
+   จากนั้น workflow ใน `.github/workflows/static.yml` จะ Deploy เว็บไซต์ให้อัตโนมัติเมื่อ Push ไปยัง branch `main`
 5. **เข้าดูผลงาน**:
    - รอระบบ GitHub Pages ประมวลผลประมาณ 1–2 นาที
    - รีเฟรชหน้า Settings > Pages จะพบ URL สำหรับเข้าดูเว็บไซต์ เช่น:
