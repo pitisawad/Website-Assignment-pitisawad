@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assignments & Projects Showcase | คลังผลงานการประยุกต์ใช้ AI</title>
+  <meta name="description" content="พอร์ตโฟลิโอแสดงผลงานโครงงานการประยุกต์ใช้ AI ในด้านต่าง ๆ: สร้างรูปภาพ, กราฟคณิตศาสตร์, Mermaid Diagrams, LaTeX และ NotebookLM พร้อมดูไฟล์ PDF ออนไลน์">
+  
+  <!-- Google Fonts: Prompt & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Mermaid.js for Assignment 3 live diagram showcase -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">✨</div>
+        <span>AI Showcase Portfolio</span>
+      </a>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme" title="สลับโหมดมืด/สว่าง">
+          <!-- Theme icon inserted by JS -->
+        </button>
+        <a href="#deploy-guide" class="btn btn-outline" style="font-size: 0.85rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          วิธีนำขึ้น GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="badge-hero">
+        <span>🚀 Generative AI & Productivity Showcase</span>
+      </div>
+      <h1 class="hero-title">
+        โครงงานและคลังผลงาน<br>
+        <span class="text-gradient">การประยุกต์ใช้ AI ในหลากหลายมิติ</span>
+      </h1>
+      <p class="hero-subtitle">
+        รวบรวมชิ้นงาน Assignment ด้าน AI ที่ครอบคลุมตั้งแต่การสร้างภาพกราฟิก, การสร้างกราฟคณิตศาสตร์,
+        การเขียน Diagram ด้วย Mermaid, การจัดทำเอกสารและตำราด้วย LaTeX, จนถึงการสังเคราะห์เนื้อหาและสไลด์ด้วย NotebookLM
+      </p>
+
+      <!-- Quick Stats -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">โครงงาน / Assignments</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">PDF</div>
+          <div class="stat-label">ดูเอกสารจริงแบบ Interactive</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">GitHub</div>
+          <div class="stat-label">รองรับ GitHub Pages ทันที</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Responsive & Dark/Light Mode</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Filter & Navigation Bar -->
+  <div class="sticky-nav-wrapper">
+    <div class="container sticky-nav">
+      <nav class="nav-pills" aria-label="Quick Jump">
+        <a href="#assignment-1" class="pill-item active">🎨 1. สร้างรูปด้วย AI</a>
+        <a href="#assignment-2" class="pill-item">📈 2. กราฟคณิตศาสตร์</a>
+        <a href="#assignment-3" class="pill-item">📊 3. Diagrams จาก Mermaid</a>
+        <a href="#assignment-4" class="pill-item">📄 4. บทความ/หนังสือ LaTeX</a>
+        <a href="#assignment-5" class="pill-item">📑 5. สรุปสไลด์ NotebookLM</a>
+      </nav>
+
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="ค้นหาหัวข้อ, เครื่องมือ, หรือคำสำคัญ..." autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Assignments -->
+  <main class="container">
+    <div id="noResults" style="display: none; text-align: center; padding: 4rem 1rem; color: var(--text-secondary);">
+      <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">🔍 ไม่พบหัวข้อที่ค้นหา</p>
+      <p style="font-size: 0.9rem;">ลองค้นหาด้วยคำอื่น เช่น "Latex", "Mermaid", "รูป", "กราฟ", "NotebookLM"</p>
+    </div>
+
+    <div class="assignments-container">
+
+      <!-- =================================================================== -->
+      <!-- Assignment 1: สร้างรูปด้วย AI -->
+      <!-- =================================================================== -->
+      <article id="assignment-1" class="assignment-card" style="--card-accent: var(--accent-pink);">
+        <div class="card-header">
+          <div>
+            <div class="topic-meta">
+              <span class="topic-badge badge-image">Assignment 01</span>
+              <span class="file-name-tag">file 1. Assignment สร้างรูปด้วย AI.pdf</span>
+            </div>
+            <h2 class="card-title">🎨 การสร้างรูปภาพด้วยปัญญาประดิษฐ์ (AI Image Generation)</h2>
+            <p class="card-subtitle">การออกแบบ Prompt และประยุกต์ใช้โมเดล GenAI ในการสร้างสรรค์ภาพกราฟิกและสื่อดิจิทัล</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" data-action="open-modal" 
+                    data-pdf-url="File/1. Assignment สร้างรูปด้วย AI.pdf" 
+                    data-pdf-title="Assignment 1: การสร้างรูปด้วย AI">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              เปิดดูเต็มจอ
+            </button>
+            <a href="File/1. Assignment สร้างรูปด้วย AI.pdf" target="_blank" class="btn btn-outline" download>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ดาวน์โหลด PDF
+            </a>
+            <button class="btn btn-outline" data-action="toggle-viewer" data-target="viewer-1">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              ซ่อน/แสดง PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="assignment-details">
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              วัตถุประสงค์และภาพรวมผลงาน
+            </h3>
+            <ul class="detail-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>ศึกษาเทคนิคการสั่งการคำสั่งเชิงภาพ (Text-to-Image Prompt Engineering) เพื่อให้ได้ผลลัพธ์ที่แม่นยำ</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การกำหนดสไตล์ทางศิลปะ (Art Style), สภาพแสง (Lighting), มุมกล้อง (Camera Angle), และความละเอียด (Resolution)</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การเปรียบเทียบผลลัพธ์จาก Prompt เดียวกันบนเครื่องมือ AI หลากหลายชนิด</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              เครื่องมือและเทคโนโลยีที่เกี่ยวข้อง
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Midjourney</span>
+              <span class="tech-tag">DALL-E 3</span>
+              <span class="tech-tag">Stable Diffusion</span>
+              <span class="tech-tag">ImageFX / Imagen 3</span>
+              <span class="tech-tag">Prompt Engineering</span>
+              <span class="tech-tag">Negative Prompts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div id="viewer-1" class="pdf-viewer-section">
+          <div class="pdf-viewer-bar">
+            <div class="pdf-viewer-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              เอกสาร: 1. Assignment สร้างรูปด้วย AI.pdf
+            </div>
+            <div class="pdf-viewer-controls">
+              <a href="File/1. Assignment สร้างรูปด้วย AI.pdf" target="_blank" class="btn btn-icon" title="เปิดแท็บใหม่">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrapper">
+            <iframe src="File/1. Assignment สร้างรูปด้วย AI.pdf#view=FitH" title="1. Assignment สร้างรูปด้วย AI" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- Assignment 2: สร้างกราฟคณิตศาสตร์ -->
+      <!-- =================================================================== -->
+      <article id="assignment-2" class="assignment-card" style="--card-accent: var(--accent-cyan);">
+        <div class="card-header">
+          <div>
+            <div class="topic-meta">
+              <span class="topic-badge badge-math">Assignment 02</span>
+              <span class="file-name-tag">file 2. Assignment สร้างกราฟคณิตศาสตร์.pdf</span>
+            </div>
+            <h2 class="card-title">📈 การสร้างกราฟคณิตศาสตร์ (Mathematical Graph Visualization)</h2>
+            <p class="card-subtitle">การใช้ AI ช่วยคำนวณ พลอตฟังก์ชัน 2D/3D และแปลงสมการทางคณิตศาสตร์สู่ภาพทัศนศาสตร์ที่เข้าใจง่าย</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" data-action="open-modal" 
+                    data-pdf-url="File/2. Assignment สร้างกราฟคณิตศาสตร์.pdf" 
+                    data-pdf-title="Assignment 2: สร้างกราฟคณิตศาสตร์">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              เปิดดูเต็มจอ
+            </button>
+            <a href="File/2. Assignment สร้างกราฟคณิตศาสตร์.pdf" target="_blank" class="btn btn-outline" download>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ดาวน์โหลด PDF
+            </a>
+            <button class="btn btn-outline" data-action="toggle-viewer" data-target="viewer-2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              ซ่อน/แสดง PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="assignment-details">
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              วัตถุประสงค์และภาพรวมผลงาน
+            </h3>
+            <ul class="detail-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การใช้ AI ในการสร้างโค้ด Python (Matplotlib, NumPy, Seaborn) เพื่อวาดกราฟสมการทางคณิตศาสตร์</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การพลอตกราฟฟังก์ชันหลายตัวแปร, พื้นผิว 3 มิติ (3D Surface), เวกเตอร์ และแคลคูลัส</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การเชื่อมโยงสมการเชิงทฤษฎีกับการแสดงผลเชิงประจักษ์เพื่อการศึกษาและการวิเคราะห์ข้อมูล</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              เครื่องมือและเทคโนโลยีที่เกี่ยวข้อง
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Python Matplotlib</span>
+              <span class="tech-tag">NumPy / SciPy</span>
+              <span class="tech-tag">Desmos Graphing</span>
+              <span class="tech-tag">GeoGebra</span>
+              <span class="tech-tag">Wolfram Alpha / AI</span>
+              <span class="tech-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div id="viewer-2" class="pdf-viewer-section">
+          <div class="pdf-viewer-bar">
+            <div class="pdf-viewer-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              เอกสาร: 2. Assignment สร้างกราฟคณิตศาสตร์.pdf
+            </div>
+            <div class="pdf-viewer-controls">
+              <a href="File/2. Assignment สร้างกราฟคณิตศาสตร์.pdf" target="_blank" class="btn btn-icon" title="เปิดแท็บใหม่">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrapper">
+            <iframe src="File/2. Assignment สร้างกราฟคณิตศาสตร์.pdf#view=FitH" title="2. Assignment สร้างกราฟคณิตศาสตร์" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- Assignment 3: การสร้าง diagrams จาก mermaid -->
+      <!-- =================================================================== -->
+      <article id="assignment-3" class="assignment-card" style="--card-accent: var(--accent-purple);">
+        <div class="card-header">
+          <div>
+            <div class="topic-meta">
+              <span class="topic-badge badge-mermaid">Assignment 03</span>
+              <span class="file-name-tag">file 3. Assignment การสร้าง diagrams จาก mermaid.pdf</span>
+            </div>
+            <h2 class="card-title">📊 การสร้าง Diagrams จาก Mermaid.js ด้วย AI</h2>
+            <p class="card-subtitle">การแปลง Flow การทำงาน, System Architecture, และ Data Model ออกมาเป็นข้อความไดอะแกรมด้วย Mermaid</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" data-action="open-modal" 
+                    data-pdf-url="File/3. Assignment การสร้าง diagrams จาก mermaid.pdf" 
+                    data-pdf-title="Assignment 3: การสร้าง diagrams จาก mermaid">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              เปิดดูเต็มจอ
+            </button>
+            <a href="File/3. Assignment การสร้าง diagrams จาก mermaid.pdf" target="_blank" class="btn btn-outline" download>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ดาวน์โหลด PDF
+            </a>
+            <button class="btn btn-outline" data-action="toggle-viewer" data-target="viewer-3">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              ซ่อน/แสดง PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Mermaid Demo Preview -->
+        <div class="mermaid-demo-box">
+          <div class="mermaid-demo-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            ตัวอย่างไดอะแกรม Mermaid แบบสดบนเว็บ (Live Rendered)
+          </div>
+          <div class="mermaid">
+graph LR
+    User[ผู้ใช้งาน / User] -->|Prompt Requirements| AI[AI Assistant]
+    AI -->|Generate Syntax| Mermaid[Mermaid.js Code]
+    Mermaid -->|Render| Flow[Flowchart]
+    Mermaid -->|Render| Seq[Sequence Diagram]
+    Mermaid -->|Render| Arch[System Architecture]
+    Flow & Seq & Arch --> Web[GitHub / Web Preview]
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="assignment-details">
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              วัตถุประสงค์และภาพรวมผลงาน
+            </h3>
+            <ul class="detail-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>ศึกษาไวยากรณ์ Mermaid ในการจำลอง Flowchart, Sequence, State และ Class Diagram</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>ใช้ AI ช่วยย่อยกระบวนการทำงานที่ซับซ้อน (Workflow) ให้กลายเป็น Text-based Diagram อัตโนมัติ</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การประยุกต์ร่วมกับ Markdown และ GitHub README โดยไม่ต้องวาดรูปกราฟิกเอง</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              เครื่องมือและเทคโนโลยีที่เกี่ยวข้อง
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Mermaid.js</span>
+              <span class="tech-tag">Flowcharts</span>
+              <span class="tech-tag">Sequence Diagrams</span>
+              <span class="tech-tag">Markdown Diagrams</span>
+              <span class="tech-tag">LLM Diagramming</span>
+              <span class="tech-tag">Software Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div id="viewer-3" class="pdf-viewer-section">
+          <div class="pdf-viewer-bar">
+            <div class="pdf-viewer-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              เอกสาร: 3. Assignment การสร้าง diagrams จาก mermaid.pdf
+            </div>
+            <div class="pdf-viewer-controls">
+              <a href="File/3. Assignment การสร้าง diagrams จาก mermaid.pdf" target="_blank" class="btn btn-icon" title="เปิดแท็บใหม่">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrapper">
+            <iframe src="File/3. Assignment การสร้าง diagrams จาก mermaid.pdf#view=FitH" title="3. Assignment การสร้าง diagrams จาก mermaid" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- Assignment 4: การสร้างบทความ หรือ หนังสือ จาก latex -->
+      <!-- =================================================================== -->
+      <article id="assignment-4" class="assignment-card" style="--card-accent: var(--accent-orange);">
+        <div class="card-header">
+          <div>
+            <div class="topic-meta">
+              <span class="topic-badge badge-latex">Assignment 04</span>
+              <span class="file-name-tag">file 4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf</span>
+            </div>
+            <h2 class="card-title">📄 การสร้างบทความหรือหนังสือจาก LaTeX ร่วมกับ AI</h2>
+            <p class="card-subtitle">การจัดรูปเล่มวิชาการ, การจัดพิมพ์สมการคณิตศาสตร์ขั้นสูง, และการสร้างโครงร่างหนังสืออย่างมืออาชีพ</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" data-action="open-modal" 
+                    data-pdf-url="File/4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf" 
+                    data-pdf-title="Assignment 4: การสร้างบทความ หรือ หนังสือ จาก LaTeX">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              เปิดดูเต็มจอ
+            </button>
+            <a href="File/4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf" target="_blank" class="btn btn-outline" download>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ดาวน์โหลด PDF
+            </a>
+            <button class="btn btn-outline" data-action="toggle-viewer" data-target="viewer-4">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              ซ่อน/แสดง PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="assignment-details">
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              วัตถุประสงค์และภาพรวมผลงาน
+            </h3>
+            <ul class="detail-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การวางโครงสร้างบทความวิชาการ (Article / Report / Book) ตามมาตรฐาน LaTeX</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การจัดรูปแบบสมการคณิตศาสตร์, ตารางข้อมูล, รูปภาพประกอบ และการอ้างอิงบรรณานุกรม (BibTeX)</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การใช้ AI ช่วยแก้ syntax error, เติมเนื้อหาเชิงวิชาการ และคอมไพล์ผ่าน Overleaf</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              เครื่องมือและเทคโนโลยีที่เกี่ยวข้อง
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">LaTeX Typesetting</span>
+              <span class="tech-tag">Overleaf</span>
+              <span class="tech-tag">BibTeX</span>
+              <span class="tech-tag">Academic Publishing</span>
+              <span class="tech-tag">Math Formula Formatting</span>
+              <span class="tech-tag">AI-assisted Writing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div id="viewer-4" class="pdf-viewer-section">
+          <div class="pdf-viewer-bar">
+            <div class="pdf-viewer-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              เอกสาร: 4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf
+            </div>
+            <div class="pdf-viewer-controls">
+              <a href="File/4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf" target="_blank" class="btn btn-icon" title="เปิดแท็บใหม่">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrapper">
+            <iframe src="File/4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf#view=FitH" title="4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- =================================================================== -->
+      <!-- Assignment 5: การสร้าง slide สรุปงานด้วย NotebookLM -->
+      <!-- =================================================================== -->
+      <article id="assignment-5" class="assignment-card" style="--card-accent: var(--accent-green);">
+        <div class="card-header">
+          <div>
+            <div class="topic-meta">
+              <span class="topic-badge badge-notebooklm">Assignment 05</span>
+              <span class="file-name-tag">file 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf</span>
+            </div>
+            <h2 class="card-title">📑 การสร้าง Slide สรุปงานด้วย NotebookLM</h2>
+            <p class="card-subtitle">การใช้ AI สังเคราะห์เนื้อหาเอกสารขนาดใหญ่ จัดทำ Key Takeaways และเปลี่ยนเป็นโครงสร้างสไลด์นำเสนอ</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" data-action="open-modal" 
+                    data-pdf-url="File/5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf" 
+                    data-pdf-title="Assignment 5: การสร้าง slide สรุปงานด้วย NotebookLM">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              เปิดดูเต็มจอ
+            </button>
+            <a href="File/5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf" target="_blank" class="btn btn-outline" download>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              ดาวน์โหลด PDF
+            </a>
+            <button class="btn btn-outline" data-action="toggle-viewer" data-target="viewer-5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              ซ่อน/แสดง PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="assignment-details">
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              วัตถุประสงค์และภาพรวมผลงาน
+            </h3>
+            <ul class="detail-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การอัปโหลดแหล่งข้อมูลหลายชุด (Multi-source Grounding) เข้าสู่ Google NotebookLM</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การสกัดประเด็นสำคัญ การตั้งคำถามเจาะลึก และการสรุปความแบบไร้ภาพลวงตา (Hallucination-free)</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>การออกแบบ Storyline สำหรับ Presentation และนำไปสร้างสไลด์ที่กระชับ โดนใจ</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3 class="detail-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              เครื่องมือและเทคโนโลยีที่เกี่ยวข้อง
+            </h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Google NotebookLM</span>
+              <span class="tech-tag">Source-grounded AI</span>
+              <span class="tech-tag">Presentation Slides</span>
+              <span class="tech-tag">Executive Summary</span>
+              <span class="tech-tag">Audio Overview / Podcast</span>
+              <span class="tech-tag">Research Assistant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div id="viewer-5" class="pdf-viewer-section">
+          <div class="pdf-viewer-bar">
+            <div class="pdf-viewer-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              เอกสาร: 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
+            </div>
+            <div class="pdf-viewer-controls">
+              <a href="File/5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf" target="_blank" class="btn btn-icon" title="เปิดแท็บใหม่">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrapper">
+            <iframe src="File/5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf#view=FitH" title="5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM" loading="lazy"></iframe>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- GitHub Upload & Deployment Guide Section -->
+    <!-- =================================================================== -->
+    <section id="deploy-guide" class="deploy-guide">
+      <h2 class="guide-title">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        ขั้นตอนการ Upload ขึ้น GitHub และเปิดดูผ่าน Website (GitHub Pages)
+      </h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+        โปรเจกต์นี้ได้รับการจัดเตรียม Source Code แบบ Static Web พร้อมไฟล์ PDF ทั้งหมดไว้เรียบร้อยแล้ว
+        สามารถอัปโหลดขึ้น GitHub และเปิดใช้งาน GitHub Pages เพื่อเข้าชมผ่านเบราว์เซอร์ได้ทันที
+      </p>
+
+      <div class="guide-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-heading">สร้าง Repository บน GitHub</div>
+          <div class="step-text">
+            เข้าสู่เว็บไซต์ GitHub แล้วสร้าง Repository ใหม่ (เช่นชื่อ <code>ai-assignments-showcase</code>) 
+            เลือกเป็น <strong>Public</strong>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-heading">เชื่อมโยงและ Push Source Code</div>
+          <div class="step-text">
+            รันคำสั่งเชื่อมโยง Remote Repository และ Push โค้ดขึ้นไป:
+          </div>
+          <div class="code-snippet">
+git remote add origin https://github.com/&lt;YOUR_USERNAME&gt;/&lt;REPO_NAME&gt;.git<br>
+git branch -M main<br>
+git push -u origin main
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-heading">เปิดใช้งาน GitHub Pages</div>
+          <div class="step-text">
+            ไปที่เมนู <strong>Settings</strong> ของ Repo &gt; เลือก <strong>Pages</strong> (เมนูด้านซ้าย) &gt;
+            ตรงส่วน <em>Branch</em> ให้เลือก <strong>main</strong> และโฟลเดอร์ <strong>/ (root)</strong> &gt; กด <strong>Save</strong>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-heading">เข้าชมเว็บไซต์ได้ทันที!</div>
+          <div class="step-text">
+            หลังจากกด Save รอระบบ Build ประมาณ 1-2 นาที คุณจะได้ URL เว็บไซต์สำหรับเข้าดูผลงาน เช่น:
+          </div>
+          <div class="code-snippet">
+https://&lt;YOUR_USERNAME&gt;.github.io/&lt;REPO_NAME&gt;/
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PDF Fullscreen Modal -->
+  <div id="pdfModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">ดูเอกสาร PDF</div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <a id="modalOpenExternal" href="#" target="_blank" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+            เปิดแท็บใหม่
+          </a>
+          <a id="modalDownload" href="#" download class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+            ดาวน์โหลด
+          </a>
+          <button id="modalClose" class="btn-icon" aria-label="Close modal" title="ปิดหน้าต่าง">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe id="modalIframe" src="about:blank" title="PDF Viewer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#assignment-1" class="footer-link">สร้างรูปด้วย AI</a>
+        <a href="#assignment-2" class="footer-link">กราฟคณิตศาสตร์</a>
+        <a href="#assignment-3" class="footer-link">Mermaid Diagrams</a>
+        <a href="#assignment-4" class="footer-link">LaTeX บทความ/หนังสือ</a>
+        <a href="#assignment-5" class="footer-link">NotebookLM Slide</a>
+      </div>
+      <p>© 2026 AI Showcase Portfolio — จัดทำและพัฒนาเพื่อนำเสนอผลงาน Assignment ด้านปัญญาประดิษฐ์</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">Compatible with GitHub Pages & Modern Web Browsers</p>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
