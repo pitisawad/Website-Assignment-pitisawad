@@ -20,7 +20,7 @@
 | **01** | **การสร้างรูปภาพด้วย AI** | `File/1. Assignment สร้างรูปด้วย AI.pdf` | เทคนิค Prompt Engineering, การสร้างภาพเชิงสร้างสรรค์ (DALL-E 3, Midjourney, Stable Diffusion, ImageFX) |
 | **02** | **การสร้างกราฟคณิตศาสตร์** | `File/2. Assignment สร้างกราฟคณิตศาสตร์.pdf` | การคำนวณและสร้างกราฟฟังก์ชันคณิตศาสตร์ 2D/3D (Python Matplotlib, NumPy, Desmos, GeoGebra) |
 | **03** | **การสร้าง Diagrams จาก Mermaid** | `File/3. Assignment การสร้าง diagrams จาก mermaid.pdf` | การแปลง Logic, Architecture และ Workflow เป็น Text-based Diagram (Flowchart, Sequence Diagram, Mermaid.js) |
-| **04** | **การสร้างบทความ/หนังสือจาก LaTeX** | `File/4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf` | การจัดรูปเล่มบทความวิชาการ ตำรา สมการคณิตศาสตร์ และบรรณานุกรมด้วย LaTeX และ Overleaf ร่วมกับ AI |
+| **04** | **การสร้างบทความ/หนังสือจาก LaTeX** | `File/assignment-4-latex.pdf` | การจัดรูปเล่มบทความวิชาการ ตำรา สมการคณิตศาสตร์ และบรรณานุกรมด้วย LaTeX และ Overleaf ร่วมกับ AI |
 | **05** | **การสร้าง Slide สรุปงานด้วย NotebookLM** | `File/5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf` | การสังเคราะห์เอกสารขนาดใหญ่ด้วย Source Grounding, การสกัดประเด็นสำคัญ และโครงสร้างสไลด์นำเสนอด้วย NotebookLM |
 
 ---
@@ -48,7 +48,7 @@ AI/
 │   ├── 1. Assignment สร้างรูปด้วย AI.pdf         # เอกสาร Assignment 1
 │   ├── 2. Assignment สร้างกราฟคณิตศาสตร์.pdf     # เอกสาร Assignment 2
 │   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf
-│   ├── 4. Assignment การสร้าง บทความ หรือ หนังสือ จาก latex.pdf
+│   ├── assignment-4-latex.pdf                   # เอกสาร Assignment 4
 │   └── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
 ├── .github/
 │   └── workflows/static.yml                       # Workflow สำหรับ Deploy ผ่าน GitHub Pages
