@@ -631,6 +631,22 @@ body {
   z-index: 1;
 }
 
+/* Exported slide deck showcase */
+.slide-deck-body {
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+}
+
+.slide-deck-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.slide-deck-body p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
 /* Modal View */
 .modal-overlay {
   position: fixed;
