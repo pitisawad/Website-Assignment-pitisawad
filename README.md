@@ -53,7 +53,8 @@ AI/
 │   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf
 │   ├── assignment-4-latex.pdf                   # เอกสาร Assignment 4
 │   ├── overleaf-life-thoughts.pdf               # หนังสือที่ Export จาก Overleaf
-│   └── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
+│   ├── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
+│   └── advanced-prompt-engineering-blueprint.pptx # สไลด์ที่ Export จาก NotebookLM
 ├── .github/
 │   └── workflows/static.yml                       # Workflow สำหรับ Deploy ผ่าน GitHub Pages
 └── README.md                                      # เอกสารประกอบโปรเจกต์และคู่มือการใช้งาน
