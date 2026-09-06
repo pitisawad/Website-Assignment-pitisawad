@@ -52,6 +52,7 @@ AI/
 │   ├── 2. Assignment สร้างกราฟคณิตศาสตร์.pdf     # เอกสาร Assignment 2
 │   ├── 3. Assignment การสร้าง diagrams จาก mermaid.pdf
 │   ├── assignment-4-latex.pdf                   # เอกสาร Assignment 4
+│   ├── overleaf-life-thoughts.pdf               # หนังสือที่ Export จาก Overleaf
 │   └── 5. Assignment การสร้าง slide สรุปงานด้วย NotebookLM.pdf
 ├── .github/
 │   └── workflows/static.yml                       # Workflow สำหรับ Deploy ผ่าน GitHub Pages
